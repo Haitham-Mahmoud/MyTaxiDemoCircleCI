@@ -1,0 +1,17 @@
+{
+  "validLogin": {
+    "validusername": "crazydog335",
+    "validpassword": "venture"
+  },
+  "invalidLogin": {
+    "invalidusername": "invalidUsername",
+    "invalidpassword": "invalidPassword"
+  },
+  "searchDriverProfile": {
+    "searchString": "sa",
+    "fullname": "Sarah Scott",
+    "location": "6834 charles st",
+    "date": "2002-10-18",
+    "telephone":"tel:0174-8819231"
+  }
+}
