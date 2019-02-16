@@ -8,8 +8,10 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 
-public class LoginPageObject extends BasePage {
+public class LoginPageObject extends BasePage
+{
     public void enterUserName(String username) {
+
         writeText(R.id.edt_username,username);
     }
 

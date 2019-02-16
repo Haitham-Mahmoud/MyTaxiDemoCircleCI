@@ -26,8 +26,6 @@ import static org.hamcrest.core.AllOf.allOf;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class SearchCallingDriverActivity extends BaseTest{
-    JsonObject jsonObject;
-    String searchDriverName,dirverFullName, driverLocation, driverJoinedDate, driverTelephone;
     SearchForDrivers searchForDriver = new SearchForDrivers();
     DriverPageObject driverPage = new DriverPageObject();
 
@@ -35,15 +33,10 @@ public class SearchCallingDriverActivity extends BaseTest{
     public void _1checkDriverProfileData(){
         searchForDriver = new SearchForDrivers();
         driverPage = new DriverPageObject();
-        jsonObject = (JsonObject) JsonReader.getJSONResource(resources, R.raw.testdata ).get("searchDriverProfile");
-        searchDriverName = jsonObject.get("searchString").getAsString();
-        dirverFullName = jsonObject.get("fullname").getAsString();
-        driverLocation = jsonObject.get("location").getAsString();
-        driverJoinedDate = jsonObject.get("date").getAsString();
-        searchForDriver.searchForExistingDriver(searchDriverName,dirverFullName);
-        driverPage.getDriverName().check(matches(withText(dirverFullName)));
-        driverPage.getDriverLocation().check(matches(withText(driverLocation)));
-        driverPage.getDriverDate().check(matches(withText(driverJoinedDate)));
+        searchForDriver.searchForExistingDriver(reader.getSearchDriver(),reader.getFullnameDriver());
+        driverPage.getDriverName().check(matches(withText(reader.getFullnameDriver())));
+        driverPage.getDriverLocation().check(matches(withText(reader.getLocationDriver())));
+        driverPage.getDriverDate().check(matches(withText(reader.getDateDriver())));
         driverPage.getDriverPhoto().check(matches(isDisplayed()));
     }
 
@@ -51,11 +44,7 @@ public class SearchCallingDriverActivity extends BaseTest{
     public void _2callingDriver(){
         searchForDriver = new SearchForDrivers();
         driverPage = new DriverPageObject();
-        jsonObject = (JsonObject) JsonReader.getJSONResource(resources, R.raw.testdata ).get("searchDriverProfile");
-        searchDriverName = jsonObject.get("searchString").getAsString();
-        dirverFullName = jsonObject.get("fullname").getAsString();
-        driverTelephone = jsonObject.get("telephone").getAsString();
-        searchForDriver.searchForExistingDriver(searchDriverName,dirverFullName);
+        searchForDriver.searchForExistingDriver(reader.getSearchDriver(),reader.getFullnameDriver());
         driverPage.callDriver();
     }
 }
