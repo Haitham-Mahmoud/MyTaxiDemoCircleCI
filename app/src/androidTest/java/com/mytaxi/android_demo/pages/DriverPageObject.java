@@ -9,7 +9,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 
-public class DriverPageObject {
+public class DriverPageObject extends BasePage{
 
     public ViewInteraction getDriverName(){
 
@@ -32,7 +32,6 @@ public class DriverPageObject {
     }
 
     public void callDriver(){
-
         onView(withId(R.id.fab)).perform(click());
     }
 

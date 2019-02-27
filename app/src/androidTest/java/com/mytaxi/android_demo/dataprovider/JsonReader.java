@@ -18,7 +18,7 @@ public class JsonReader {
             parser = new JsonParser();
             return parser.parse(new InputStreamReader(resources.openRawResource(id))).getAsJsonObject();
         }
-        catch (Exception e) {
+        catch (IllegalStateException e) {
             Log.e(TAG, e.getMessage(), e);
             return null;
         }

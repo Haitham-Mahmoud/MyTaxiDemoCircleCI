@@ -191,10 +191,10 @@ public class MainActivity extends AuthenticatedActivity
     }
 
     private void getDeviceLocation() {
-    /*
-     * Get the best and most recent location of the device, which may be null in rare
-     * cases when a location is not available.
-     */
+        /*
+         * Get the best and most recent location of the device, which may be null in rare
+         * cases when a location is not available.
+         */
         try {
             if (mPermissionHelper.isLocationPermissionGranted()) {
                 Task locationResult = mFusedLocationProviderClient.getLastLocation();

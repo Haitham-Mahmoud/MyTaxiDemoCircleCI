@@ -7,5 +7,6 @@
   "fullnameDriver": "Sarah Scott",
   "locationDriver": "6834 charles st",
   "dateDriver": "2002-10-18",
-  "telephoneDriver":"tel:0174-8819231"
+  "telephoneDriver":"tel:0174-8819231",
+  "logout":"Logout"
 }

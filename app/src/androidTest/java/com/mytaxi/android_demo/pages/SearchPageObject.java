@@ -2,16 +2,11 @@ package com.mytaxi.android_demo.pages;
 
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.matcher.RootMatchers;
-
 import com.mytaxi.android_demo.R;
-
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.AllOf.allOf;
-
 
 public class SearchPageObject extends BasePage{
 

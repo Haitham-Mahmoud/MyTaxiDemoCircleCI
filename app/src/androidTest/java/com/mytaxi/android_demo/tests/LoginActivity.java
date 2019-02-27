@@ -21,7 +21,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 public class LoginActivity extends BaseTest {
     Login loginHandler;
     LoginPageObject loginPage;
-    SearchPageObject searchPage;
 
     @Test
     public void _1testFailLogin() {
@@ -29,13 +28,5 @@ public class LoginActivity extends BaseTest {
         loginPage = new LoginPageObject();
         loginHandler.loginCredentials(reader.getInvalidUsername(), reader.getInvalidPassword());
         loginPage.getLoginButton().check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void _2testSuccessfulLogin() {
-        loginHandler = new Login();
-        searchPage = new SearchPageObject();
-        loginHandler.loginCredentials(reader.getValidUsername(), reader.getValidPassword());
-        searchPage.getTextSearch().check(matches(isDisplayed()));
     }
 }
